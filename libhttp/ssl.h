@@ -97,6 +97,7 @@ extern long    (*x_SSL_CTX_ctrl)(SSL_CTX *, int, long, void *);
 extern void    (*x_SSL_CTX_free)(SSL_CTX *);
 extern SSL_CTX*(*x_SSL_CTX_new)(SSL_METHOD *);
 extern int     (*x_SSL_CTX_set_cipher_list)(SSL_CTX *, const char *);
+extern unsigned long (*x_SSL_CTX_set_options)(SSL_CTX *, unsigned long);
 extern void    (*x_SSL_CTX_set_info_callback)(SSL_CTX *,
                                               void (*)(const SSL *, int, int));
 extern int     (*x_SSL_CTX_use_PrivateKey_file)(SSL_CTX *, const char *, int);
@@ -145,6 +146,7 @@ extern void   *(*x_SSL_COMP_get_compression_methods)(void);
 #define SSL_CTX_free                 x_SSL_CTX_free
 #define SSL_CTX_new                  x_SSL_CTX_new
 #define SSL_CTX_set_cipher_list      x_SSL_CTX_set_cipher_list
+#define SSL_CTX_set_options          x_SSL_CTX_set_options
 #define SSL_CTX_set_info_callback    x_SSL_CTX_set_info_callback
 #define SSL_CTX_use_PrivateKey_file  x_SSL_CTX_use_PrivateKey_file
 #define SSL_CTX_use_PrivateKey_ASN1  x_SSL_CTX_use_PrivateKey_ASN1

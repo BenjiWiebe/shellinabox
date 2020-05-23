@@ -115,6 +115,7 @@ long          (*SSL_CTX_ctrl)(SSL_CTX *, int, long, void *);
 void          (*SSL_CTX_free)(SSL_CTX *);
 SSL_CTX *     (*SSL_CTX_new)(SSL_METHOD *);
 int           (*SSL_CTX_set_cipher_list)(SSL_CTX *, const char *);
+unsigned long (*SSL_CTX_set_options)(SSL_CTX *, unsigned long);
 void          (*SSL_CTX_set_info_callback)(SSL_CTX *,
                                            void (*)(const SSL *, int, int));
 int           (*SSL_CTX_use_PrivateKey_file)(SSL_CTX *, const char *, int);
@@ -298,6 +299,7 @@ static void loadSSL(void) {
     { { &SSL_CTX_free },                "SSL_CTX_free" },
     { { &SSL_CTX_new },                 "SSL_CTX_new" },
     { { &SSL_CTX_set_cipher_list },     "SSL_CTX_set_cipher_list" },
+	{ { &SSL_CTX_set_options },         "SSL_CTX_set_options" },
     { { &SSL_CTX_set_info_callback },   "SSL_CTX_set_info_callback" },
     { { &SSL_CTX_use_PrivateKey_file }, "SSL_CTX_use_PrivateKey_file" },
     { { &SSL_CTX_use_PrivateKey_ASN1 }, "SSL_CTX_use_PrivateKey_ASN1" },
